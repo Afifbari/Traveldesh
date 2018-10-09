@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SRS for Traveldesh</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+		    font-family: "Lato", sans-serif;
+		}
+
+		.sidenav {
+		    height: 100%;
+		    width: 300px;
+		    position: fixed;
+		    z-index: 1;
+		    top: 0;
+		    left: 0;
+		    background-color: #111;
+		    overflow-x: hidden;
+		    padding-top: 20px;
+		}
+
+		.sidenav a {
+		    padding: 6px 8px 6px 16px;
+		    text-decoration: none;
+		    font-size: 15px;
+		    color: #818181;
+		    display: block;
+		}
+
+		.sidenav a:hover {
+		    color: #f1f1f1;
+		}
+
+		.sub_menu {
+			margin-left: 15px;
+			margin-bottom: -15px;
+		}
+
+		.head_menu {
+			margin-bottom: -4px;
+			margin-top: 30px;
+		}
+
+		.main {
+		    margin-left: 310px; /* Same as the width of the sidenav */
+		    font-size: 16px; /* Increased text to enable scrolling */
+		    padding: 0px 10px;
+		}
+
+		.inside {
+			margin-left: 0px;
+		}
+
+		#cover {
+			text-align: right;
+			margin-bottom: 140px;
+		}
+
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		}
+		th, td {
+		    padding: 5px;
+		    text-align: left;    
+		}
+
+		@media screen and (max-height: 450px) {
+		    .sidenav {padding-top: 15px;}
+		    .sidenav a {font-size: 18px;}
+		}
+	</style>
+</head>
+<body>
+
+	<div class="sidenav">
+		
+		<h2 style="color: #818181">Table of Contents</h2>
+
+		<h3 class="head_menu"><a href="#cover">0.i. Cover</a></h3>
+
+		<h3 class="head_menu"><a href="#revision_history">0.ii. Revision History</a></h3>
+
+		<h3 class="head_menu"><a href="#intro">1. Introduction</a></h3>
+			<a href="#1_1" class="sub_menu">1.1 Purpose</a><br>
+			<a href="#1_2" class="sub_menu">1.2 Document Conventions</a><br>
+			<a href="#1_3" class="sub_menu">1.3 Intended Audience and Reading Suggestions</a><br>
+			<a href="#1_4" class="sub_menu">1.4 Product Scope</a>
+
+		<h3 class="head_menu"><a href="#ovrl_desc">2. Overall Description</a></h3>
+			<a href="#2_1" class="sub_menu">2.1 Product Perspective</a><br>
+			<a href="#2_2" class="sub_menu">2.2 Product Functions</a><br>
+			<a href="#2_3" class="sub_menu">2.3 User Classes and Characteristics</a><br>
+			<a href="#2_4" class="sub_menu">2.4 Operating Environment</a><br>
+			<a href="#2_5" class="sub_menu">2.5 Design and Implementation Constraints</a><br>
+			<a href="#2_6" class="sub_menu">2.6 User Documentation</a><br>
+			<a href="#2_7" class="sub_menu">2.7 Assumptions and Dependencies</a>
+
+		<h3 class="head_menu"><a href="#ext_req">3. External Interface Requirements</a></h3>
+			<a href="#3_1" class="sub_menu">3.1	User Interfaces</a><br>
+			<a href="#3_2" class="sub_menu">3.2	Hardware Interfaces</a><br> 
+			<a href="#3_3" class="sub_menu">3.3	Software Interfaces</a><br>
+			<a href="#3_4" class="sub_menu">3.4	Communications Interfaces</a>
+
+		<h3 class="head_menu"><a href="#sys_ftr">4. System Features</a></h3>
+			<a href="#4_1" class="sub_menu">4.1	Use case name – Take Departure Point</a><br>
+			<a href="#4_2" class="sub_menu">4.2 Use case name – Take destination point</a><br>
+			<a href="#4_3" class="sub_menu">4.3 Use case name – Select transportation option</a>
+
+		<h3 class="head_menu"><a href="#non_func_req">5. Other Nonfunctional Requirements</a></h3>
+			<a href="#5_1" class="sub_menu">5.1	Performance Requirements</a><br>
+			<a href="#5_2" class="sub_menu">5.2	Software Quality Attributes</a>
+
+		<h3 class="head_menu"><a href="#other_req">6. Other Requirements</a></h3>
+		<h3 class=""><a href="#appx">Appendix A: Glossary</a></h3>
+
+	</div>
+
+
+	<div class="main">
+
+		<div id="cover">
+			<h1>Software Requirements<br>Specification</h1>
+			<h4>for</h4>
+
+			<h2>Traveldesh</h2>
+
+			<br><br>
+
+			<h5>Version 1.0 approved</h5>
+
+			<br><br>
+
+			<h4>Prepared by</h4>
+
+			<h4>Afif Bari<br>Al Amin Sohag<br>MD Siam Ahmed</h4>
+
+			<br><br>
+
+			<h4>8-10-2018</h4>
+		</div>
+
+		<div id="revision_history">
+
+			<h3>Revision History</h3>
+
+			<table style="width:100%">
+			  <tr>
+			    <th>Name</th>
+			    <th>Date</th>
+			    <th>Reason For Changes</th>
+			    <th>Version</th>
+			  </tr>
+			  <tr>
+			    <td>Afif Bari</td>
+			    <td>8-10-18</td>
+			    <td>Initial Verion</td>
+			    <td>1.0</td>
+			  </tr>
+			</table>
+
+			<br><br>
+		</div>
+
+		<!-- This part below contains the Introduction section of the document -->
+		<div class="introduction" id="intro"> 
+			<h1>1. Introduction</h1>
+
+			<div class="inside">
+				<h3 id="1_1">1.1	Purpose</h3>
+				<p>The purpose of this document is to provide a detailed overview of our Software Traveldesh, the initial version of which is 1.0. The document will describe about the targeted audience, its user interface, hardware and software requirements. Nonetheless, it will help the designers and developers in the whole software delivery process.</p>
+
+				<h3  id="1_2">1.2	Document Conventions</h3>
+				<p>This document follows MLA Format. Bold-faced text has been used to emphasize section
+				and sub-section headings. Highlighting is to point out words in the glossary and italicized text is used to label and recognize diagrams.</p>
+
+				<h3  id="1_3">1.3	Intended Audience and Reading Suggestions</h3>
+				<p>This document is intended towards the users, developers, designers, marketing agents, testers and project managers. This document will assess each audience in grasping the total concept about the app and its features.</p>
+
+				<h3  id="1_4">1.4	Product Scope</h3>
+				<p>This app is based on traveling purpose. The users can use this app in order to get quick routes towards their destination and also the estimated time and cost for each route that he selects. This can be used by the transportation companies for a better client side user experience in their booking portals.</p>
+			<div>
+		</div>
+
+		<!-- The part below contains the Overall Description section of the document -->
+		<div class="overall_desc" id="ovrl_desc">
+
+			
+			<h1>2.	Overall Description</h1>
+
+			<div class="inside">
+				<!-- Section 2.1 -->
+
+				<h3 id="2_1">2.1	Product Perspective</h3>
+				<p>The product mentioned in the document will be a solution for the travelers in Bangladesh. The travelers in Bangladesh mostly face difficulties in choosing the right route for their travel and thus are unable to estimate a time and cost for their travelling purpose. This app will assess them to choose the most efficient route and will also give them an idea about the cost and time of travel.</p>
+
+				<!-- Section 2.2 -->
+
+				<h3 id="2_2">2.2	Product Functions</h3>
+				<p>The major functions of the product are –</p>
+				<ul>
+					<li>Let the user choose a departure point.</li>
+					<li>Let the user choose a destination point.</li>
+					<li>Show user all the possible routes based on the departure and destination point selected.</li>
+					<li>Show user the all the possible transportation options for the selected departure and destination point.</li>
+					<li>Show user the estimated time for each route based on the selected transportation system.</li>
+					<li>Show user the estimated cost for each route based on the selected transportation system.</li>
+				</ul>
+
+				<!-- Section 2.3 -->
+
+				<h3 id="2_3">2.3	User Classes and Characteristics</h3>
+				<h4 class="sub_section-2.3">2.3.1	Customer:</h4>
+				<p>Remote customers will mostly use the app for having an assumption about the route their going to travel, they’ll get the idea of the total cost and time of the travel and also the available transportation options. The customers are not expected to be of very technical knowledge and thus the user interface will be made very simple and an easy to understand structure.</p>
+
+				<h4 class="sub_section-2.3">2.3.2	Database Administrator:</h4>
+				<p>The Database Administrator is expected to have a college degree and an experience of atleast 2 years in DBA and must have a profound knowledge about IT field. They have the ability to update the informations in the database and manage it accordingly.</p>
+
+				<h4 class="sub_section-2.3">2.3.3	Developer:</h4>
+				<p>The developers are expected to have high knowledge about software developing and designing and must have a college degree along with 2 years of software developing experience and also a good knowledge of software related to the product scope. They have to privilege to update and add new features of the app for betterment of user interface.</p>
+
+				<!-- Section 2.4 -->
+
+				<h3 id="2_4">2.4	Operating Environment</h3>
+				<p>The software will have two platforms in which it will work, one is the website platform and the other is the android app platform. In website platform it will be running with the combination of JavaScript, PHP and Sql. And on the android platform it will be running with the use of Java, PHP and Sql.</p>
+
+				<!-- Section 2.5 -->
+
+				<h3 id="2_5">2.5	Design and Implementation Constraints</h3>
+				<ul>
+					<li><strong>Platform requirements:</strong> The software must work on android and on website.</li>
+					<li><strong>Time constraint:</strong> The software must show the result in less than 4 seconds.</li>
+					<li><strong>Design constraint:</strong> The software must have voice recognition system for the user to say their departure and destination points.</li>
+				</ul>
+
+				<!-- Section 2.6 -->
+
+				<h3 id="2_6">2.6	User Documentation</h3>
+				<p>For the user documentation please refer to section 3: External Interface Requirements and attached user manual.</p>
+
+				<!-- Section 2.7 -->
+
+				<h3 id="2_7">2.7	Assumptions and Dependencies</h3>
+				<p>It is assumed that the software will work fine as long it is used on an android device or on a web browser. <br> As the software is dependent on feeding latest transportation updates from transportation services through online thus the customer is expected to have internet connection while using the software.</p>
+
+			</div>
+
+		</div>
+
+
+		<!-- The part below contains the External Interface Requirements section of the document -->
+		<div class="external_req" id="ext_req">
+			<h1>3.	External Interface Requirements</h1>
+
+			<div class="inside">
+				<h3 id="3_1">3.1	User Interfaces</h3>
+				<p>The user interface of Traveldesh has been designed in such a way so that the user doesn’t have to roam around to find options and get annoyed. The interface is easy to use and thus the user will get the hold of the software within seconds.</p>
+				<p>The home screen will have the option for user to choose destination and then after that will have the option to choose the departure point and based on that resulted routes, distance and transportation options will appear.</p>
+				<p>After selecting the transportation option the user will get the estimated cost and time in the travel based on that transport. The user will also have the option to switch between the transportation options and compare the time and cost for each case.</p>
+
+
+				<h3 id="3_2">3.2	Hardware Interfaces</h3>
+				<p>The software will have the capability to run on computers and as well as android device. In computer the software will run as a website application which will be accessible with a browser  and on the android device the software will run as android app as well as a web application which will be again accessible by a mobile browser.</p>
+
+
+				<h3 id="3_3">3.3	Software Interfaces</h3>
+				<p>The software runs on Java based android app as well as JavaScript based web app. In both cases the software has the ability to recognize the user voice in terms of selecting their departure and destination points.</p>
+
+
+				<h3 id="3_4">3.4	Communications Interfaces</h3>
+				<p>Users need to connect the software to the main system by the means of internet. From there they can easily perform their tasking selecting and searching for their travel routes. They will be able to login to the app with their registered email address and password. Whenever the user connects the software to the internet the software will automatically take the required updates. The update will completed within a very short period of time.</p>
+			</div>
+
+
+		</div>
+
+
+
+		<!-- The part below contains the System Features section of the document -->
+		<div class="system_features" id="sys_ftr">
+			<h1>4.	System Features</h1>
+
+			<div class="inside">
+			<!-- Section 4.1 -->
+
+			<h3 id="4_1">4.1	Use case name – Take Departure Point</h3>
+			<pre>	4.1.1 Objective – The purpose of this case is to take departure point from the user through the means of voice recognition.
+
+	4.1.2 Source – The source of this case is the user.
+
+	4.1.3 Actors – The end user of the device which is the customer would be the actor of this case.
+
+	4.1.4 Flow of events –
+
+		4.1.4.1 Basic Flow –  
+
+			4.1.4.1.1 User says the departure point.
+			4.1.4.1.2 Software recognizes the point and goes to next feature.
+
+		4.1.4.2 Alternative Flow – At step 4.1.4.1.1, the user decides to type the departure point.
+			4.1.4.2.1 User presses cancel button.
+			4.1.4.2.2 Software shows text field to enter point.
+			4.1.4.2.3 User types point and presses enter.
+			4.1.4.2.4 Software takes the chosen point and goes to next feature.
+
+		4.1.4.3 Exception Flow – At step 4.1.4.2, the device can’t recognize the point.
+
+			4.1.4.3.1 – The software shows an error message and let’s the user to again say the departure point.
+
+	4.1.5 Post conditions – The user is taken to the destination selection feature.
+		</pre>
+
+			<!-- Section 4.2 -->
+
+			<h3 id="4_2">4.2 Use case name – Take destination point</h3>
+			<pre>	4.2.1 Objective – The purpose of this case is to take destination point from the user through the means of voice recognition.
+
+	4.2.2 Source – The source of this case is the user.
+
+	4.2.3 Actors – The end user of the device which is the customer would be the actor of this case.
+
+	4.2.4 Flow of events –
+
+		4.2.4.1 Basic Flow –  
+
+			4.2.4.1.1 User says the destination point.
+			4.2.4.1.2 Software recognizes the point and goes to next feature.
+
+		4.2.4.2 Alternative Flow – At step 4.2.4.1.1, the user decides to type the destination point.
+			4.2.4.2.1 User presses cancel button.
+			4.2.4.2.2 Software shows text field to enter point.
+			4.2.4.2.3 User types point and presses enter.
+			4.2.4.2.4 Software takes the chosen point and goes to next feature.
+
+		4.2.4.3 Alternative Flow – At step 4.2.4.1.1, the user decides to go back and give the departure point again.
+			4.2.4.3.1 User presses back button.
+			4.2.4.3.2 Software takes the user back to the departure selection menu.
+
+
+		4.2.4.4 Exception Flow – At step 4.2.4.2, the device can’t recognize the point.
+
+			4.2.4.3.1 – The software shows an error message and let’s the user to again say the destination point.
+
+
+	4.2.5 Post conditions – The user is taken to the select transportation option feature.
+		</pre>
+
+			<!-- Section 4.3 -->
+
+			<h3 id="4_3">4.3 Use case name – Select transportation option</h3>
+			<pre>	4.3.1 Objective – The purpose of this case is to take transportation option from the user through the means of selections from a set of available transportations. 
+
+	4.3.2 Source – The source of this case is the user.
+
+	4.3.3 Actors – The end user of the device which is the customer would be the actor of this case.
+
+	4.3.4 Flow of events –
+
+		4.3.4.1 Basic Flow –  
+
+			4.3.4.1.1 User selects the transportation option.
+			4.3.4.1.2 Software takes the option and shows the estimated time and cost for that selected transportation option.
+
+		4.3.4.2 Alternative Flow – At step 4.3.4.1.2, the user decides to view a different transportation option
+			4.3.4.2.1 User presses another transportation option button.
+			4.3.4.2.2 Software goes back to step 4.3.4.1.2
+
+
+		4.3.4.3 Exception Flow – At step 4.3.4.1.2, the user decides to go back to home.
+
+			4.3.4.3.1 – The user presses home button.
+			4.3.4.3.2 – The user is taken back to take departure point menu.
+		</pre>
+
+			</div>
+
+		</div>
+
+
+		<!-- The part below contains the Other Nonfunctional Requirements section of the document -->
+		<div class="nonfunctional_req" id="non_func_req">
+			<h1>5.	Other Nonfunctional Requirements</h1>
+
+			<div class="inside">
+				<h3 id="5_1">5.1	Performance Requirements</h3>
+				<p>The software must work seamlessly while its operation. The filtered options must be shown within a time limit of 4 seconds and the software must not crash during the operations. The crash rate must be less than 2 percent.</p>
+
+
+				<h3 id="5_2">5.2	Software Quality Attributes</h3>
+				<p>The voice recognition system used by the app must recognize the app precisely and the success rate must be at least 98 percent. The app must renew it’s database time to time so that the informations fetch to the users are accurate and reliable. The user interface must be such that even the person with the lowest technical knowledge can use the app with least difficulties.</p>
+
+			</div>
+
+			<!-- The part below contains the Other Requirements section of the document -->
+			<div class="other_requirements" id="other_req">
+				<h1>6.	Other Requirements</h1>
+
+				<div class="inside">
+					<p>For information regarding functional requirements, refer to section 4: System Features.<br>
+					Each feature has its requirements listed alongside the feature information. Special requirements for each system feature are also mention in section 4. There are no additional Functional requirements.
+					</p>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- The part below contains the Appendix section of the document -->
+		<div class="appendix" id="appx">
+			<h1>Appendix A: Glossary</h1>
+			<pre>DBA – Database administrators. The personals who manipulate the data stored in the database system of a software.
+App – An application, especially as downloaded by a user to a mobile device.
+			</pre>
+
+		</div>
+
+	</div>
+
+</body>
+</html>
